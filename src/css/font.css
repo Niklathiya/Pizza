@@ -1,0 +1,24 @@
+@font-face{
+    font-family: WorkSans-Regular;
+    src: url("../fonts/WorkSans-Regular.ttf");
+}
+@font-face{
+    font-family: WorkSans-Bold;
+    src: url("../fonts/WorkSans-Bold.ttf");
+}
+@font-face{
+    font-family: BebasNeue-Regular;
+    src: url("../fonts/BebasNeue-Regular.ttf");
+}
+@font-face{
+    font-family: CoveredByYourGrace-Regular;
+    src: url("../fonts/CoveredByYourGrace-Regular.ttf");
+}
+@font-face{
+    font-family: FontsFree-Net-Arion-Typeface-Alt;
+    src: url("../fonts/FontsFree-Net-Arion-Typeface-Alt.ttf");
+}
+@font-face{
+    font-family: Lora-Regular;
+    src: url("../fonts/Lora-Regular.ttf");
+}
