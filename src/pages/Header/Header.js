@@ -58,7 +58,6 @@ const Header = () => {
                                 </div>
                             </li>
                         </ul>
-
                     </div>
                     <div className='hamburger_menu' onClick={onClickClose} >
                         <i id='bar' className={clicked ? "fas fa-times" : "fa-solid fa-bars-staggered fa-rotate-180"} ></i>
