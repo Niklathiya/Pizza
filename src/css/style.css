@@ -644,10 +644,13 @@ a {
   margin: 10px 0px 0px -116px;
 }
 
+.pizzamenu_box_space {
+  padding: 60px 0px 0px;
+}
+
 .dishes_upperbox {
   display: flex;
   margin: 0px 175px;
-  padding-top: 60px;
 }
 
 .dishes_img {
@@ -963,11 +966,13 @@ a {
   top: -1px;
   background-image: linear-gradient(180deg, #000000 0%, #FFFFFF00 270%);
 }
-.footer_space{
+
+.footer_space {
   margin: 100px 250px 60px;
   position: relative;
 }
-.footer_space::after{
+
+.footer_space::after {
   position: absolute;
   content: '';
   height: 1px;
@@ -977,11 +982,13 @@ a {
   left: -10%;
   padding: 0px 100px;
 }
-.footer{
+
+.footer {
   display: flex;
   justify-content: space-around;
 }
-.footer h4{
+
+.footer h4 {
   color: var(--white);
   font-size: 30px;
   font-family: var(--bebas-regular);
@@ -989,34 +996,41 @@ a {
   text-align: center;
   padding-bottom: 20px;
 }
-.footer p{
+
+.footer p {
   color: var(--white);
   font-family: var(--Lora-Regular);
-  line-height: 28px;  
+  line-height: 28px;
   text-align: center;
 }
-.footer_logobox{
+
+.footer_logobox {
   padding: 0px 50px;
 }
-.footer_logo_align{
+
+.footer_logo_align {
   display: flex;
   justify-content: center;
 }
-.footer_logo{
+
+.footer_logo {
   width: 180px;
   margin-top: -20px;
   margin-bottom: 10px;
 }
-.home_contact{
+
+.home_contact {
   margin-bottom: 20px;
   display: flex;
 }
-.home_contact input{
+
+.home_contact input {
   height: 40px;
   border: none;
   caret-color: var(--secondary-color);
 }
-.home_contact button{
+
+.home_contact button {
   width: 40px;
   border: none;
   margin-left: 5px;
@@ -1025,12 +1039,14 @@ a {
   display: flex;
   align-items: center;
 }
-.social_links{
+
+.social_links {
   display: flex;
   width: 200px;
   justify-content: space-between;
 }
-.social_button{
+
+.social_button {
   background-color: var(--white);
   color: var(--black);
   width: 40px;
@@ -1042,24 +1058,142 @@ a {
   font-size: 22px;
   transition: all 0.3s ease-in-out;
 }
-.social_button:hover{
+
+.social_button:hover {
   background-color: var(--primary-color);
 }
-.footer_nav{
+
+.footer_nav {
   display: flex;
   justify-content: center;
   margin-top: 100px;
 }
-.footer_link{
-  font-size: 14px!important;
-  font-weight: 500!important;
+
+.footer_link {
+  font-size: 14px !important;
+  font-weight: 500 !important;
 }
-.copyright{
+
+.copyright {
   color: var(--white);
   text-align: center;
   font-family: var(--Lora-Regular);
   margin-top: 15px;
 }
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  OUR MENUS                                 */
+/* -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 OUR BANNER                                 */
+/* -------------------------------------------------------------------------- */
+
+.our_bg_img {
+  background-image: url("/public/images/ourbanner.jpg");
+  width: 100%;
+  /* height: 95vh; */
+  height: 720px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 10%;
+}
+
+.ourbanner_heading {
+  padding: 220px 0px 0px 170px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             HEALTHY AND MODERN                             */
+/* -------------------------------------------------------------------------- */
+.healthymenus {
+  padding: 40px 0px 80px 0px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               OUR PIZZA NEMU                               */
+/* -------------------------------------------------------------------------- */
+
+.ourpizzamenu_space {
+  padding: 0px 0px 60px 0px !important;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    ABOUT                                   */
+/* -------------------------------------------------------------------------- */
+
+.about_bg_img {
+  background-image: url("/public/images/aboutbanner.webp");
+  width: 100%;
+  /* height: 95vh; */
+  height: 720px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 10%;
+}
+
+.about_oneroof {
+  padding: 100px 0px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* -------------------------------------------------------------------------- */
 /*                                   reveal                                   */

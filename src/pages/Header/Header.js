@@ -31,7 +31,7 @@ const Header = () => {
 
     return (
         <>
-            <header className={`fixed-after-scroll-header ${isFixed ? 'fixed' : ','}`}>
+            <header className={`fixed-after-scroll-header ${isFixed ? 'fixed' : ','}`} id="hi">
                 <nav className="main_nav">
                     <div>
                         <Link to="/">
@@ -44,13 +44,13 @@ const Header = () => {
                                 <Link to="/" className="header_link">HOME</Link>
                             </li>
                             <li>
-                                <Link to="/Service" className="header_link">our menus</Link>
+                                <Link to="/Menus" className="header_link">our menus</Link>
                             </li>
                             <li>
                                 <Link to="/About" className="header_link">ABOUT US</Link>
                             </li>
                             <li>
-                                <Link to="/Work" className="header_link">RESERVATION</Link>
+                                <Link to="/Reservation" className="header_link">RESERVATION</Link>
                             </li>
                             <li className='btn_space'>
                                 <div>

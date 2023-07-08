@@ -2,10 +2,9 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import About from './About'
-import Service from './Service'
-import Work from './Work'
-import Contact from './Contact'
 import Layout from './Layout/Layout'
+import Ourmenus from './Ourmenus'
+import Reservation from './Reservation'
 
 const Routing = () => {
     return (
@@ -14,13 +13,12 @@ const Routing = () => {
                 <Routes>
                     <Route path='/' element={<Layout />} >
                         <Route path="/" element={<Home />} />
+                        <Route path='/Menus' element={<Ourmenus />} />
                         <Route path='/About' element={<About />} />
-                        <Route path='/Service' element={<Service />} />
-                        <Route path='/Work' element={<Work />} />
-                        <Route path='/Contact' element={<Contact />} />
+                        <Route path='/Reservation' element={<Reservation />} />
                     </Route>
                 </Routes>
-            </BrowserRouter>            
+            </BrowserRouter>
         </>
     )
 }

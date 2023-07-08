@@ -68,16 +68,16 @@ const Footer = () => {
                                     </div>
                                     <div className='social_links'>
                                         <div className='social_button'>
-                                            <i class="fa-brands fa-facebook-f"></i>
+                                            <i className="fa-brands fa-facebook-f"></i>
                                         </div>
                                         <div className='social_button'>
-                                            <i class="fa-brands fa-instagram"></i>
+                                            <i className="fa-brands fa-instagram"></i>
                                         </div>
                                         <div className='social_button'>
-                                            <i class="fa-brands fa-whatsapp"></i>
+                                            <i className="fa-brands fa-whatsapp"></i>
                                         </div>
                                         <div className='social_button'>
-                                            <i class="fa-brands fa-linkedin"></i>
+                                            <i className="fa-brands fa-linkedin"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -90,13 +90,13 @@ const Footer = () => {
                                         <Link to="/" className="header_link footer_link">HOME</Link>
                                     </li>
                                     <li>
-                                        <Link to="/Service" className="header_link footer_link">our menus</Link>
+                                        <Link to="/Menus" className="header_link footer_link">our menus</Link>
                                     </li>
                                     <li>
                                         <Link to="/About" className="header_link footer_link">ABOUT US</Link>
                                     </li>
                                     <li>
-                                        <Link to="/Work" className="header_link footer_link">RESERVATION</Link>
+                                        <Link to="/Reservation" className="header_link footer_link">RESERVATION</Link>
                                     </li>
                                 </ul>
                             </div>

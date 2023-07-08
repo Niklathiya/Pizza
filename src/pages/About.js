@@ -1,9 +1,12 @@
 import React from 'react'
+import Aboutbanner from '../component/aboutComponent/Aboutbanner'
+import Oneroof from '../component/aboutComponent/Oneroof'
 
 const About = () => {
     return (
         <div>
-            about
+            <Aboutbanner />
+            <Oneroof />
         </div>
     )
 }

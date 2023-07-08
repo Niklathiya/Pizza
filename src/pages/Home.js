@@ -3,7 +3,7 @@ import Banner from '../component/homeComponent/Banner'
 import Culture from '../component/homeComponent/Culture'
 import Delicious from '../component/homeComponent/Delicious'
 import Dishes from '../component/homeComponent/Dishes'
-import Ourmenus from '../component/homeComponent/Ourmenus'
+import Menus from '../component/homeComponent/Menus'
 import Perspective from '../component/homeComponent/Perspective'
 import Serving from '../component/homeComponent/Serving'
 
@@ -14,7 +14,7 @@ const Home = () => {
             <Banner />
             <Culture />
             <Perspective />
-            <Ourmenus />
+            <Menus />
             <Serving />
             <Dishes />
             <Delicious />
