@@ -8,7 +8,7 @@ const Culture = () => {
             const textright = document.querySelector('.textscroll_right');
             const value = window.scrollY;
 
-            if (scrollround && textleft && textright) {
+            if (scrollround || textleft || textright) {
                 scrollround.style.clipPath = `circle(${value}px at center center)`;
                 textleft.style.left = `${30 - value / 12}%`;
                 textright.style.right = `${70 - value / 12}%`;
@@ -46,7 +46,6 @@ const Culture = () => {
                         </p>
                         <p>Mike Dean</p>
                     </div>
-
                     {/* -------------------------------------------------------------------------- */}
                     {/*                                 Text scroll                                */}
                     {/* -------------------------------------------------------------------------- */}

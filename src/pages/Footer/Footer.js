@@ -28,7 +28,8 @@ const Footer = () => {
         fetchData();
     }, []);
 
-    const handleCreate = async () => {
+    const handleCreate = async (e) => {
+        e.preventDefault();
         await addDoc(collection(fireStoreDb, "users"), {
             name: "Ash",
             email: newItem,
@@ -37,6 +38,18 @@ const Footer = () => {
         fetchData();
         setNewItem("");
     };
+
+
+    /* -------------------------------------------------------------------------- */
+    /*                         click on logo and scroll up                        */
+    /* -------------------------------------------------------------------------- */
+    const handleClick = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <div>
             <section>
@@ -52,20 +65,22 @@ const Footer = () => {
                                 </div>
                                 <div className='footer_logobox'>
                                     <div className='footer_logo_align'>
-                                        <img src='../images/logo.png' className='footer_logo' />
+                                        <Link to="/" onClick={handleClick}>
+                                            <img src='../images/logo.png' className='footer_logo' />
+                                        </Link>
                                     </div>
                                     <p>Lake House, 13 Hanway, Square,</p>
                                     <p>London, UK</p>
                                 </div>
                                 <div>
                                     <h4>contact with us</h4>
-                                    <div className='home_contact'>
+                                    <form className='home_contact'>
                                         <input type="email" value={newItem}
                                             onChange={(e) => setNewItem(e.target.value)} />
-                                        <button onClick={() => { handleCreate(); }}>
+                                        <button onClick={(e) => { handleCreate(e); }}>
                                             <img src='../images/send.png' />
                                         </button>
-                                    </div>
+                                    </form>
                                     <div className='social_links'>
                                         <div className='social_button'>
                                             <i className="fa-brands fa-facebook-f"></i>
