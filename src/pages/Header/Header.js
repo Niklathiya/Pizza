@@ -57,12 +57,21 @@ const Header = () => {
                                     <button className='button'>ORDER MEAL</button>
                                 </div>
                             </li>
+                            <div className='menu_btn'>
+                                <Link to="/Cart">
+                                    <i class="fa-solid fa-cart-shopping" style={{ color: "#f5f5f5" }}></i>
+                                </Link>
+                                <Link to="/LikedProductsPage">
+                                    <i class="fa-regular fa-heart" style={{ color: "#ffffff" }}></i>
+                                </Link>
+                            </div>
                         </ul>
                     </div>
                     <div className='hamburger_menu' onClick={onClickClose} >
                         <i id='bar' className={clicked ? "fas fa-times" : "fa-solid fa-bars-staggered fa-rotate-180"} ></i>
                         <div className={clicked ? "overlay" : ","}></div>
                     </div>
+
                 </nav>
 
             </header>

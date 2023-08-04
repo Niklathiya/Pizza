@@ -11,11 +11,9 @@ import {
 import { fireStoreDb } from '../firebaseConfig';
 
 const Cart = () => {
-    // const [data, setData] = useState([]);
     const [data, setData] = useState([]);
 
     const fetchCartData = async () => {
-        // try {
         const querySnapshot = await getDocs(collection(fireStoreDb, "cart"));
         const data = []
         querySnapshot.forEach((doc) => {
@@ -26,73 +24,75 @@ const Cart = () => {
                     description: doc.data().description,
                     price: doc.data().price,
                     image: doc.data().image,
-                    quantity: 1,
+                    quantity: doc.data().quantity || 1,
                 })
             }
         });
         setData(data);
     };
 
-
     useEffect(() => {
         fetchCartData();
     }, []);
-
-    // const removeFromCart = async (id) => {
-
-    //     // Remove the product from the cart state.
-    //     // setCart((prevCart) => prevCart.filter((item) => item.id == id));
-
-    //     try {
-    //         // Remove the product from the Firestore database.
-    //         const a= await deleteDoc(doc(fireStoreDb, 'cart', id));
-
-    //         console.log('Product removed from Firestore:', id);
-    //         setCart(cart)
-    //     } catch (error) {
-    //         console.error('Error removing from cart: ', error);
-    //     }
-    // };
 
     const removeFromCart = async (id) => {
         await deleteDoc(doc(fireStoreDb, "cart", id));
         fetchCartData();
     };
 
-    // const removeFromCart = async (id) => {
-    //     try {
-    //         // Step 1: Remove item locally from cart state
-    //         setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+    const updateCartQuantity = async (id, newQuantity) => {
+        newQuantity = Math.min(Math.max(newQuantity, 0), 10);
 
-    //         // Step 2: Remove item from Firestore
-    //         await deleteDoc(doc(fireStoreDb, "cart", id));
+        const productRef = doc(fireStoreDb, "cart", id);
 
-    //         // Step 3: Fetch updated cart data (assuming fetchCartData is a valid function)
-    //         fetchCartData();
-
-    //         console.log(`Item with id ${id} removed from cart successfully.`);
-    //     } catch (error) {
-    //         console.error("Error removing item from cart:", error);
-    //     }
-    // };
+        await updateDoc(productRef, { quantity: newQuantity });
+        // Update the state to reflect the updated quantity
+        setData((prevData) =>
+            prevData.map((item) => (item.id === id ? { ...item, quantity: newQuantity } : item))
+        );
+    };
 
     return (
         <div>
             <div>
                 <h1>Cart</h1>
-                <div>
-                    {data.map((item) => (
-                        <div key={item.id}>
-                            <p>{item.name}</p>
-                            <p>{item.price}</p>
-                            <p>{item.quantity}</p>
-                            <img src={item.image} alt={item.name} />
-                            <button onClick={() => removeFromCart(item.id)}>Remove from Cart</button>
-                        </div>
-                    ))}
-                </div>
+                {data.length === 0 ? (
+                    <p>Your cart is empty</p>
+                ) : (
+                    <div>
+                        {data.map((item) => (
+                            <div key={item.id}>
+                                <p>{item.name}</p>
+                                <p>{item.price}</p>
+                                <img src={item.image} alt={item.name} />
+                                <button onClick={() => removeFromCart(item.id)}>Remove from Cart</button>
+                                {/* <div>
+                                    <button onClick={() => updateCartQuantity(item.id, item.quantity - 1)}>-</button>
+
+                                    <p>{item.quantity}</p>
+                                    <button onClick={() => updateCartQuantity(item.id, item.quantity + 1)}>+</button>
+                                </div> */}
+                                <div>
+                                    <button onClick={() => updateCartQuantity(item.id, item.quantity - 1)}>-</button>
+                                    <input
+                                        type="number"
+                                        value={item.quantity}
+                                        onChange={(e) => {
+                                            const newQuantity = parseInt(e.target.value);
+                                            updateCartQuantity(item.id, isNaN(newQuantity) ? 0 : newQuantity);
+                                        }}
+                                        min="0"
+                                    />
+                                    <button onClick={() => updateCartQuantity(item.id, item.quantity + 1)}>+</button>
+                                </div>
+                                {/* Bill amount */}
+                                <p>Bill Amount: {item.quantity * item.price}</p>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
-        </div>
+        </div >
     )
 }
 

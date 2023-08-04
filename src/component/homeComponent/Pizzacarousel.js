@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore";
 import { fireStoreDb } from "../../firebaseConfig";
 
-const Pizzacarousel = () => {
+const Pizzacarousel = () => { 
     const settings = {
         dots: true,
         infinite: true,
