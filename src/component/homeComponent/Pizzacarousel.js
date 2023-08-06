@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore";
 import { fireStoreDb } from "../../firebaseConfig";
 
-const Pizzacarousel = () => { 
+const Pizzacarousel = () => {
     const settings = {
         dots: true,
         infinite: true,
@@ -97,13 +97,15 @@ const Pizzacarousel = () => {
             <div className="carousel">
                 <Slider {...settings} className="custom-carousel-dots">
                     {data.map((item) => (
-                        <div key={item}>
-                            <button
-                                onClick={() => handleLike(item.id, !item.liked)}
-                                style={{ color: item.liked ? "red" : "black" }}
-                            >
-                                <i className="fa-solid fa-heart"></i>
-                            </button>
+                        <div key={item} className="pizzacarousel">
+                            <div className='like_button_box'>
+                                <button
+                                    onClick={() => handleLike(item.id, !item.liked)}
+                                    style={{ color: item.liked ? "red" : "black" }}
+                                    className="like_button">
+                                    <i className="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
                             <Link to="/Products">
                                 <img src={item.image} />
                                 <h3>{item.name}</h3>

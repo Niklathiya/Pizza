@@ -102,6 +102,9 @@ a {
 /* -------------------------------------------------------------------------- */
 /*                                   Header                                   */
 /* -------------------------------------------------------------------------- */
+.header_container{
+  margin: 0px 0px;
+}
 .fixed-after-scroll-header {
   position: absolute;
   z-index: 111;
@@ -193,6 +196,72 @@ a {
 .nav_box ul li:hover .header_link::after {
   display: block;
   transform: scale(1, 1.1);
+}
+
+.profile_flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profile_box {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.profile {
+  /* filter: invert(100); */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.profilename_flex {
+  display: flex;
+  align-items: center;
+}
+
+.profilename_flex p{
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.profilename_flex i {
+  align-items: center;
+  margin-left: 10px;
+}
+
+.dropdown{
+  position: relative;
+  cursor: pointer;
+}
+.dropdown_menu{
+  position: absolute;
+  background-color: var(--white);
+  color: var(--black);
+  top: 150%;
+  border-radius: 10px;
+  width: 120px;
+  overflow: hidden;
+}
+.dropdown_menu li{
+  padding: 12px 15px!important;
+  transition: 0.5s ease-out;
+  margin: 0px!important;
+}
+.dropdown_menu li:hover{
+  background-color: rgb(230, 230, 230);
+}
+.dropdown_link{
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: capitalize;
 }
 
 
@@ -576,13 +645,9 @@ a {
   display: flex;
 }
 
-.yy {
-  margin-right: 50px;
-}
-
 /* Custom carousel dots styles */
 .custom-carousel-dots li button:before {
-  font-size: 14px!important;
+  font-size: 14px !important;
   /* Adjust the size of the dots */
   color: #333;
   /* Change the color of the dots */
@@ -593,21 +658,24 @@ a {
   opacity: 0.9;
 }
 
-.ourmenus img {
+.pizzacarousel img {
   width: 315px;
   height: 315px;
   transition: .5s;
 }
 
-.ourmenus img:hover {
+.pizzacarousel img:hover {
   transform: scale(1.06);
 }
-
-.ourmenus h3 {
+.pizzacarousel:hover .like_button_box{
+  opacity: 1;
+}
+.pizzacarousel h3 {
   font-size: 36px;
   font-family: var(--bebas-regular);
   color: var(--black);
 }
+
 .carousel_title p {
   line-height: 28px;
   font-family: var(--Lora-Regular);
@@ -622,7 +690,21 @@ a {
 .carousel_title_space {
   margin: 20px 30px 0px 0px;
 }
-
+.like_button_box{
+  position: relative;
+  transition: .3s ease-in-out;
+  opacity: 0;
+}
+.like_button{
+  background-color: white;
+  border: none;
+  position: absolute;
+  right: 10%;
+  z-index: 10;
+}
+.like_button i{
+  font-size: 20px;
+}
 .alignment p {
   padding-right: 10px;
   font-size: 17px;
@@ -1835,11 +1917,13 @@ option {
   background-color: rgb(255, 221, 0, 0.7);
   padding: 100px;
 }
-.login_detail label{
+
+.login_detail label {
   font-family: var(--work-regular);
   font-weight: 700;
 }
-.login_detail input{
+
+.login_detail input {
   background-color: black;
   padding: 15px;
   width: 420px;
@@ -1856,11 +1940,12 @@ option {
 /* -------------------------------------------------------------------------- */
 /*                                PRODUCT PAGE                                */
 /* -------------------------------------------------------------------------- */
-.product_page{
+.product_page {
   display: flex;
   justify-content: space-between;
 }
-.menu_btn i{
+
+.menu_btn i {
   margin: 0px 10px;
 }
 
